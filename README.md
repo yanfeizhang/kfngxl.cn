@@ -1,4 +1,2 @@
-This is my website
-
-Yes
+website: https://kfngxl.cn
 
