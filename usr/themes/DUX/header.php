@@ -57,7 +57,7 @@
             <div class="brand"><?php if($this->options->logotext && !empty($this->options->logotext) ): ?><?php $this->options->logotext(); ?><?php endif; ?></div>
             <ul class="site-nav site-navbar">
                 <!--<li><a href="<?php $this->options ->siteUrl(); ?>"><i class="fa fa-home"></i>首页</a></li>-->
-                
+<li><a href="http://kfngxl.cn/index.php"><i class="fa fa-home"></i> 首页</a></li>                
 <?php if ($this->options->categorymenu == 'able'): ?>
                 <li>
                     <a><i class="fa fa-folder-open"></i>文章分类</a>
