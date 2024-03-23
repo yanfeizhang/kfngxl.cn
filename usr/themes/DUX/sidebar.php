@@ -1,6 +1,19 @@
 <?php if (!defined('__TYPECHO_ROOT_DIR__')) exit; ?>
     <!-- start sidebar -->
     <aside class="sidebar">
+        
+<?php if (!empty($this->options->sidebarBlock) && in_array('ShowTags', $this->options->sidebarBlock)): ?>
+    <div class="widget widget_ui_tags">
+        <h3>标签云</h3>
+        <div class="items">
+<?php $this->widget('Widget_Metas_Tag_Cloud', 'ignoreZeroCount=1&limit=24')->to($tags); ?>
+<?php while($tags->next()): ?>
+            <a href="<?php $tags->permalink(); ?>"><?php $tags->name(); ?> （<?php $tags->count(); ?>）</a>
+<?php endwhile; ?>
+        </div>
+    </div>
+<?php endif; ?>
+
 <?php if (!empty($this->options->sidebarBlock) && in_array('ShowRecentPosts', $this->options->sidebarBlock)): ?>
     <div class="widget widget-tops">
         <ul class="widget-nav"><li class="active">最新文章</li></ul>
@@ -60,17 +73,6 @@
                 <br><?php $comments->excerpt(22, '...'); ?></a></li>
 <?php endwhile; ?>
         </ul>
-    </div>
-<?php endif; ?>
-<?php if (!empty($this->options->sidebarBlock) && in_array('ShowTags', $this->options->sidebarBlock)): ?>
-    <div class="widget widget_ui_tags">
-        <h3>标签云</h3>
-        <div class="items">
-<?php $this->widget('Widget_Metas_Tag_Cloud', 'ignoreZeroCount=1&limit=24')->to($tags); ?>
-<?php while($tags->next()): ?>
-            <a href="<?php $tags->permalink(); ?>"><?php $tags->name(); ?> （<?php $tags->count(); ?>）</a>
-<?php endwhile; ?>
-        </div>
     </div>
 <?php endif; ?>
     </aside>
