@@ -38,7 +38,7 @@ Ubuntu 系统下安装方法：<code>sudo apt install jpegoptim pngquant</code>'
 
     public static function uploadHandle($img){
         self::addWaterMark($img);
-        self::compressImage($img);
+        return self::compressImage($img);
     }
     
     public static function addWaterMark($img){
@@ -101,7 +101,6 @@ Ubuntu 系统下安装方法：<code>sudo apt install jpegoptim pngquant</code>'
      */
     public static function compress(&$path)
     {
-        var_dump($path);
         $ext = strtolower(pathinfo($path)['extension']);
         if ($ext === "png") {
             compress_png_inplace($path);
