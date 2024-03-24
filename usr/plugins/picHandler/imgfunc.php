@@ -62,6 +62,11 @@ function ImgWaterMark($w_quality, $w_pct, $db_waterfonts, $db_watermark,$source,
 	if ($db_watermark == 1) {
 		if ($waterdb['type'] == 'png') {
 			$tmp = imagecreatetruecolor($sourcedb['width'], $sourcedb['height']);
+			
+			// Set the background color of image
+			$background_color = imagecolorallocate($tmp,  245, 245, 245);
+			imagefill($tmp, 0, 0, $background_color);
+
 			imagecopy($tmp, $sourcedb['source'], 0, 0, 0, 0, $sourcedb['width'], $sourcedb['height']);
 			imagecopy($tmp, $waterdb['source'], $wX, $wY, 0, 0, $waterdb['width'], $waterdb['height']);
 			$sourcedb['source'] = $tmp;

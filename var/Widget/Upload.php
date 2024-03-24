@@ -325,13 +325,18 @@ class Upload extends Contents implements ActionInterface
 
                     /** 增加插件接口 */
                     self::pluginHandle()->upload($this);
+                    
+                    // get compressed filesize
+                    $size=filesize(ltrim($result['path'],'/'));
 
                     $this->response->throwJson([$this->attachment->url, [
                         'cid' => $insertId,
                         'title' => $this->attachment->name,
                         'type' => $this->attachment->type,
-                        'size' => $this->attachment->size,
-                        'bytes' => number_format(ceil($this->attachment->size / 1024)) . ' Kb',
+                        //'size' => $this->attachment->size,
+                        //'bytes' => number_format(ceil($this->attachment->size / 1024)) . ' Kb',
+                        'size' => $size,
+                        'bytes' => number_format(ceil($size / 1024)) . ' Kb',
                         'isImage' => $this->attachment->isImage,
                         'url' => $this->attachment->url,
                         'permalink' => $this->permalink
