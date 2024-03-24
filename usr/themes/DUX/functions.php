@@ -328,7 +328,7 @@ function sitebar_ad($obj) {
 
 function getBuildTime(){
 // 在下面按格式输入本站创建的时间
-    $site_create_time = strtotime('2010-01-01 00:00:00');
+    $site_create_time = strtotime('2024-03-23 00:00:00');
     $time = time() - $site_create_time;
     if(is_numeric($time)){
         $value = array(

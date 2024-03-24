@@ -30,7 +30,7 @@
     </div>
 <?php endif; ?>
 <?php if (!empty($this->options->sidebarBlock) && in_array('ShowRecentPosts', $this->options->sidebarBlock)): ?>
-    <div class="widget widget-tops" style="background:url(https://shuxun.wang/1.jpg")>
+    <div class="widget widget-tops")>
         <ul class="widget-nav"><li class="active">站点统计</li></ul>
         <ul class="widget-navcontent">
             <li class="item item-01 active">
@@ -38,7 +38,6 @@
 <?php Typecho_Widget::widget('Widget_Stat')->to($stat); ?>
 <li>文章总数：<?php $stat->publishedPostsNum() ?>篇</li>
 <li>分类总数：<?php $stat->categoriesNum() ?>个</li>
-<li>评论总数：<?php $stat->publishedCommentsNum() ?>条</li>
 <li><?php PageViews_Plugin::showPageViews(); ?></li>
 <li>本站运营：<?php getBuildTime(); ?></li>
 <?php while($post->next()): ?>

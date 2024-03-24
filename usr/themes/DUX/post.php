@@ -39,7 +39,7 @@
                 </div>
 <?php endif?>
 
-<?php $this->need('comments.php'); ?>
+<?php //$this->need('comments.php'); ?>
             </div>
         </div>
 <?php $this->need('sidebar.php'); ?>
